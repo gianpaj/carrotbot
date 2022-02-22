@@ -8,6 +8,9 @@ import { MenuMiddleware } from 'grammy-inline-menu';
 import { FileAdapter } from '@satont/grammy-file-storage';
 
 import { MyContext } from './my-context';
+import { Reminder } from './reminder';
+
+const reminder = new Reminder();
 
 // load env variables
 require('dotenv').config({ path: path.join(__dirname, '../.env') });
@@ -16,7 +19,7 @@ import { menu } from './menu';
 
 const token = process.env['BOTTOKEN'];
 if (token === undefined) {
-  throw new Error('BOT_TOKEN must be provided!');
+  throw new Error('BOTTOKEN must be provided!');
 }
 
 const bot = new Bot<MyContext>(token);
@@ -64,6 +67,7 @@ bot.hears(/reset/, (ctx) => {
   ctx.session.pizzaCount = 0;
   return ctx.reply(`Your hunger level is ${0}!`);
 });
+bot.hears(/\/remind/, (ctx) => reminder.handle(ctx));
 
 bot.catch((error) => {
   console.error('ERROR on handling update occured', error);
