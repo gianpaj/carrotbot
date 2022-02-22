@@ -42,7 +42,7 @@ jobs:
     - name: Deploy
       run: |
         whoami
-        cd /home/gpalumbo/carrotbot
-        git pull
-        npm install
-        pm2 restart carrotbot
+        ssh staging 'cd /home/gpalumbo/carrotbot &&\
+        git pull &&\
+        npm install &&\
+        pm2 restart carrotbot'
