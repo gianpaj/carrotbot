@@ -1,6 +1,5 @@
-
 const { Telegraf } = require('telegraf');
-const path = require('path'); 
+const path = require('path');
 // load env variables
 require('dotenv').config({ path: path.join(__dirname, '.env') });
 
@@ -25,5 +24,4 @@ bot.use(async (ctx, next) => {
   return next;
 });
 
-
-bot.launch()
+bot.launch();
