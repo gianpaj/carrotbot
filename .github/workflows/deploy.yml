@@ -45,4 +45,5 @@ jobs:
           ssh staging 'cd /home/gpalumbo/carrotbot &&\
           git pull &&\
           npm install &&\
+          npm run build &&\
           pm2 restart carrotbot'
