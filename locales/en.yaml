@@ -1,0 +1,16 @@
+welcome: >
+  Hey ${from.first_name}!
+help: This is some example help text.
+menu:
+  back: back…
+  main: main…
+  settings: Settings
+  language: Language
+  reset: Reset
+pizza:
+  body: >
+    Your current count is ${count} - Do you want to reset it?
+settings:
+  body: >
+    Feel free to set the settings you prefer.
+  language: Select your language
