@@ -1,5 +1,6 @@
 import { Context as BaseContext } from 'grammy';
-const parseReminder = require('parse-reminder');
+
+import parseReminder from '../services/parse-reminder';
 
 export class Reminder<Context extends BaseContext> {
   /**
@@ -15,8 +16,7 @@ export class Reminder<Context extends BaseContext> {
   };
 }
 
-export function parseCommand(text: string): ReminderResult {
+export function parseCommand(text: string, fromDate?: Date): ReminderResult | null {
   text = text.replace('/remind', 'remind me').trim();
-  const reminder = (parseReminder as typeof parseReminderFN)(text);
-  return reminder;
+  return parseReminder(text, fromDate);
 }

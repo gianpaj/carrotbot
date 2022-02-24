@@ -1,5 +1,5 @@
 declare function parseReminderFN(reminder: string): ReminderResult;
-interface ReminderResult {
+declare interface ReminderResult {
   who: string;
   what: string;
   when: Date;
