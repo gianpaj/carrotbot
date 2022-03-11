@@ -23,6 +23,7 @@
     "grammy": "^1.7.0",
     "grammy-inline-menu": "^7.0.2",
     "jest": "^27.5.1",
+    "sherlockjs": "^1.4.2",
     "telegraf": "^4.7.0",
     "telegraf-middleware-console-time": "^2.1.0"
   },
