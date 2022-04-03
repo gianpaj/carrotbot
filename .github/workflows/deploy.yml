@@ -30,7 +30,7 @@ jobs:
       - name: Deploy
         run: |
           whoami
-          ssh $SSH_USER@100.121.239.89 'cd /home/gpalumbo/carrotbot &&\
+          ssh gpalumbo@fd7a:115c:a1e0:ab12:4843:cd96:6279:ef59 'cd /home/gpalumbo/carrotbot &&\
           git pull &&\
           npm install &&\
           npm run build &&\
