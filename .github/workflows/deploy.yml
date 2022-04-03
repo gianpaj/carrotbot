@@ -30,7 +30,7 @@ jobs:
       - name: Deploy
         run: |
           whoami
-          ssh carrot-2 'cd /home/gpalumbo/carrotbot &&\
+          ssh $SSH_USER@100.121.239.89 'cd /home/gpalumbo/carrotbot &&\
           git pull &&\
           npm install &&\
           npm run build &&\
